@@ -37,6 +37,7 @@
     "awesome-typescript-loader": "5.2.1",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.2.0",
+    "cypress": "^5.3.0",
     "dot": "^1.1.3",
     "eslint": "^7.10.0",
     "eslint-config-vaadin": "^0.4.0",
@@ -48,6 +49,7 @@
     "prettier": "^2.1.2",
     "prismjs": "^1.21.0",
     "rimraf": "^3.0.2",
+    "start-server-and-test": "^1.11.5",
     "ts-lit-plugin": "^1.2.1",
     "typescript": "^4.0.3",
     "webpack": "^5.0.0-rc.3",
@@ -68,11 +70,13 @@
   },
   "scripts": {
     "build": "npm run docs && webpack --env production",
+    "cy:run": "cypress run",
     "docs": "rimraf docs && node build-docs.js",
     "lint": "npm-run-all --parallel lint:*",
     "lint:js": "eslint src --ext .ts --ignore-path .gitignore",
     "lint:lit": "lit-analyzer src --strict",
     "dev": "webpack-dev-server --env development",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test:cypress": "start-server-and-test start http://localhost:8000 cy:run"
   }
 }

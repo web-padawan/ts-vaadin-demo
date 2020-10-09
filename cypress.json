@@ -1,0 +1,6 @@
+{
+  "baseUrl": "http://localhost:8000",
+  "includeShadowDom": true,
+  "integrationFolder": "test",
+  "video": false
+}
